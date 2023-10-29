@@ -1,0 +1,29 @@
+@model Usuario
+
+<main>
+    <nav>
+        <form asp-action="LogOut" asp-controller="Home" method="POST">
+            <div class="barraSesion">
+                <h1>Welcome @Context.Session.GetString("Nombre")!</h1>
+                <button class=logout>Log out</button>
+            </div>
+        </form>
+    </nav>
+    <div class="contenido">
+        <form asp-action="Dashboard" asp-controller="Home" method="POST">
+            <div class="numero">
+                @ViewBag.Numero
+            </div>
+            <div class="cuadroOperacion">
+                <div class="filaBoton">
+                    <button id=botonUno name=numero value=+Uno>+ 1</button>
+                    <button id=botonDos name=numero value=-Uno>- 1</button>
+                </div>
+                <div class="filaBoton">
+                    <button id=botonTres name=numero value=xDos>x 2</button>
+                    <button id=botonCuatro name=numero value=Random>+ Random</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
