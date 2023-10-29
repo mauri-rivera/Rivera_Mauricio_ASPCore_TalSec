@@ -36,7 +36,7 @@ public class Usuario
 
     public int SumaAleatoria(int numero)
     {
-        Random rangoNumero = new();
+        Random rangoNumero = new Random();
         int aleatorio = rangoNumero.Next(1, 11);
 
         int resultado = aleatorio + numero;
